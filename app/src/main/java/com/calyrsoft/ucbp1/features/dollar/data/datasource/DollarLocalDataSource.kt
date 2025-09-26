@@ -13,18 +13,23 @@ class DollarLocalDataSource(
         return dao.getList().map {
             it.toModel()
         }
-
     }
+
+    // **Nuevo método** para obtener el último registro
+    suspend fun getLatestDollar(): DollarModel? {
+        return dao.getLatestDollar()?.toModel()
+    }
+
     suspend fun deleteAll() {
         dao.deleteAll()
     }
-    suspend fun inserTDollars(list: List<DollarModel>) {
-        val dollarEntity = list.map { it.toEntity() }
-        dao.insertDollars(dollarEntity)
+
+    suspend fun insertDollars(list: List<DollarModel>) {
+        val dollarEntities = list.map { it.toEntity() }
+        dao.insertDollars(dollarEntities)
     }
 
     suspend fun insert(dollar: DollarModel) {
         dao.insert(dollar.toEntity())
     }
-
 }

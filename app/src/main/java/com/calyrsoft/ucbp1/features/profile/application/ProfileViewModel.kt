@@ -1,5 +1,6 @@
 package com.calyrsoft.ucbp1.features.profile.application
 
+
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.calyrsoft.ucbp1.features.profile.domain.model.ProfileModel
@@ -32,7 +33,7 @@ class ProfileViewModel(
             val resultProfile = profileUseCase.invoke()
             resultProfile.fold(
                 onSuccess = {
-                   _state.value = ProfileUiState.Success(it)
+                    _state.value = ProfileUiState.Success(it)
                 },
                 onFailure = {
                     _state.value = ProfileUiState.Error(it.message.toString())

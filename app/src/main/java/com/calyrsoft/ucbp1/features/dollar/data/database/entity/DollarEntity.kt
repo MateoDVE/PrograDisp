@@ -1,3 +1,4 @@
+
 package com.calyrsoft.ucbp1.features.dollar.data.database.entity
 
 import androidx.room.ColumnInfo
@@ -13,14 +14,15 @@ data class DollarEntity(
     @ColumnInfo(name = "dollar_official")
     var dollarOfficial: String? = null,
 
-    @ColumnInfo(name = "dollar_parallel")
+    @ColumnInfo(name = "dollar_paralelo")
     var dollarParallel: String? = null,
 
-    @ColumnInfo(name = "timestamp")
-    var timestamp: Long = 0,
-    @ColumnInfo(name = "dollar_usdt")
+    @ColumnInfo(name = "dollar_usdt") // Corregido: de USDT a usdt
     var dollarUSDT: String? = null,
 
-    @ColumnInfo(name = "dollar_usdc")
-    var dollarUSDC: String? = null
+    @ColumnInfo(name = "dollar_usdc") // Corregido: de USDC a usdc
+    var dollarUSDC: String? = null,
+
+    @ColumnInfo(name = "timestamp")
+    var timestamp: Long = 0
 )
